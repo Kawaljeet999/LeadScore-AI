@@ -27,14 +27,15 @@
 - **Selenium 4.33**
 - **BeautifulSoup 4**
 - **Pandas**
-- **Streamlit (for UI integration)**
-- Headless Chrome for automation
+- **Streamlit** (for interactive frontend)
 
 ---
 
 ## 📸 Demo
 
-👉 [Live Demo (Coming Soon)](https://your-demo-link.com)
+👉 [Live Demo](https://leadscore-ai.onrender.com/)
+
+⚠️ Note: The app may experience limited performance or temporary crashes due to free-tier hosting constraints. We’re actively working to improve stability and performance soon.
 
 ---
 
@@ -82,17 +83,6 @@ streamlit run app.py
   - Social Links, Tags
   - Score and Scoring Reasons
 - Output CSV: `scored_leads.csv`
-
----
-
-## 🌍 Deployment (Optional)
-
-To deploy on platforms like **Streamlit Cloud**:
-
-1. Push code to GitHub.
-2. Create a `requirements.txt` (already done).
-3. Deploy on [Streamlit Cloud](https://streamlit.io/cloud).
-4. Add demo link to this README.
 
 ---
 
