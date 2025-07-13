@@ -1,107 +1,72 @@
 
-# 🚀 LeadScore AI - Smart Lead Intelligence Scraper
+# 🚀 My Portfolio
 
-**LeadScore AI** is a web scraping and scoring tool built using Selenium, BeautifulSoup, and Python. It intelligently extracts data from startup or business websites and scores them based on indicators such as modern tech stacks, keywords like "AI" or "B2B", and presence of emails, phone numbers, social links, and more.
+This is my personal portfolio website showcasing my projects, skills, and experience. It is built with modern technologies and designed for speed, responsiveness, and simplicity.
 
----
-
-## 🔥 Features
-
-- 🌐 Scrapes website title, meta description, headings, full text
-- 📧 Extracts emails and phone numbers
-- 🔗 Finds all links including LinkedIn, Twitter, Facebook, etc.
-- 🧠 Scores websites based on:
-  - Keywords like **AI**, **B2B**, **SaaS**
-  - Use of modern tech like **React**, **Firebase**, **Stripe**
-  - Presence of pricing/demo pages
-  - Availability of contact info (emails, phones)
-- 🏷️ Automatically tags companies (e.g., Healthtech, B2B)
-- 📦 Saves results in a clean CSV file
-- 💻 Headless browser support for fast and invisible scraping
+[🌐 Live Demo](https://kawaljeet9.vercel.app)  
+[📂 GitHub Repository](https://github.com/Kawaljeet999/Portfolio)
 
 ---
 
-## 🛠 Tech Stack
+## ✨ Features
 
-- **Python 3.11+**
-- **Selenium 4.33**
-- **BeautifulSoup 4**
-- **Pandas**
-- **Streamlit** (for interactive frontend)
-
----
-
-## 📸 Demo
-
-👉 [Live Demo](https://leadscore-ai.onrender.com/)
-
-⚠️ Note: The app may experience limited performance or temporary crashes due to free-tier hosting constraints. We’re actively working to improve stability and performance soon.
+* 🌙 Dark/Light mode toggle  
+* 🖥️ Responsive design for all devices (desktop, tablet, mobile)  
+* 📁 Projects section with live demos and GitHub links  
+* 📄 Clean and elegant UI using **Tailwind CSS** and **shadcn/ui**  
+* ⚡ Fast performance powered by **Vite**  
+* 🔗 Smooth page transitions with **React Router**
 
 ---
 
-## 🧪 How It Works
+## 🛠️ Tech Stack
 
-1. Open any startup website.
-2. The scraper fetches the full HTML and parses useful content.
-3. A scoring algorithm evaluates the site based on:
-   - Keywords
-   - Modern tech usage
-   - Links and metadata
-4. Final data is saved to a CSV or shown in the Streamlit app.
+- **Frontend**: React + TypeScript  
+- **Styling**: Tailwind CSS + shadcn/ui  
+- **Bundler**: Vite  
+- **Routing**: React Router  
 
 ---
 
-## 🚀 Run Locally
+## 🚀 Getting Started
 
-### 📦 Requirements
+To run this project locally:
 
 ```bash
-pip install -r requirements.txt
-```
+# Step 1: Clone the repository
+git clone https://github.com/Kawaljeet999/Portfolio.git
 
-### ▶️ Usage
+# Step 2: Navigate to the project directory
+cd Portfolio
 
-#### Run from CLI
+# Step 3: Install dependencies
+npm install
 
-```bash
-python scrape.py https://example.com
-```
-
-#### Run with Streamlit UI
-
-```bash
-streamlit run app.py
+# Step 4: Start the development server
+npm run dev
 ```
 
 ---
 
-## 📄 Output
+## 🌐 Deployment
 
-- Results include:
-  - Title, Meta Description
-  - Emails, Phones
-  - Social Links, Tags
-  - Score and Scoring Reasons
-- Output CSV: `scored_leads.csv`
+To deploy the project:
 
----
-
-## 🧠 Ideal For
-
-- Lead generation teams
-- Startup analysts
-- Investors doing due diligence
-- Marketing teams targeting SaaS, B2B, or AI-based tools
+1. Build the production version:
+   ```bash
+   npm run build
+   ```
+2. Deploy the contents of the `dist` folder to your preferred hosting provider (e.g., Vercel, Netlify).
 
 ---
 
-## 👨‍💻 Author
+## 📄 License
 
-- Made with ❤️ by Kawaljeet Singh
-- [LinkedIn](https://www.linkedin.com/in/kawaljeet)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🪪 License
+## 👤 Author
 
-Licensed under the Apache 2.0 License.
+**Kawaljeet Singh**  
+[GitHub](https://github.com/Kawaljeet999) | [Live Site](https://kawaljeet9.vercel.app)
