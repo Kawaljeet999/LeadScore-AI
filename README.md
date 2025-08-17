@@ -1,149 +1,107 @@
-# 🚀 Lead Scraper & Scoring Tool  
 
-This project is a **Python-based lead scraping and scoring tool**. It uses **Selenium + BeautifulSoup** to extract data from websites, then applies a **scoring system** to rank potential leads based on tech stack, keywords, and contact availability.  
+# 🚀 LeadScore AI - Smart Lead Intelligence Scraper
 
-The tool is designed to help with **lead generation, B2B prospecting, and market research** by automatically collecting and evaluating useful information from websites.  
-
----
-
-## 📌 Features  
-
-✅ Scrapes website metadata and content:
-- Page **Title**  
-- **Headings (H1 & H2)**  
-- **Meta description**  
-- **Full text content**  
-
-✅ Extracts contact details:  
-- Emails 📧  
-- Phone numbers 📱  
-
-✅ Detects & tags social media profiles:  
-- LinkedIn, Twitter, Facebook, Instagram  
-
-✅ Finds **tech stack keywords** (React, Stripe, Firebase, Next.js, GraphQL)  
-
-✅ Collects all hyperlinks  
-
-✅ Lead **scoring system** based on:  
-- AI / B2B / SaaS mentions  
-- Pricing/Demo links  
-- Modern tech stack usage  
-- Contact info presence  
-- Early-stage/stealth indicators  
-
-✅ Saves results to **CSV** for easy processing  
+**LeadScore AI** is a web scraping and scoring tool built using Selenium, BeautifulSoup, and Python. It intelligently extracts data from startup or business websites and scores them based on indicators such as modern tech stacks, keywords like "AI" or "B2B", and presence of emails, phone numbers, social links, and more.
 
 ---
 
-## ⚙️ Installation  
+## 🔥 Features
 
-Make sure you have **Python 3.8+** installed.  
+- 🌐 Scrapes website title, meta description, headings, full text
+- 📧 Extracts emails and phone numbers
+- 🔗 Finds all links including LinkedIn, Twitter, Facebook, etc.
+- 🧠 Scores websites based on:
+  - Keywords like **AI**, **B2B**, **SaaS**
+  - Use of modern tech like **React**, **Firebase**, **Stripe**
+  - Presence of pricing/demo pages
+  - Availability of contact info (emails, phones)
+- 🏷️ Automatically tags companies (e.g., Healthtech, B2B)
+- 📦 Saves results in a clean CSV file
+- 💻 Headless browser support for fast and invisible scraping
+
+---
+
+## 🛠 Tech Stack
+
+- **Python 3.11+**
+- **Selenium 4.33**
+- **BeautifulSoup 4**
+- **Pandas**
+- **Streamlit** (for interactive frontend)
+
+---
+
+## 📸 Demo
+
+👉 [Live Demo](https://leadscore-ai.onrender.com/)
+
+⚠️ Note: The app may experience limited performance or temporary crashes due to free-tier hosting constraints. We’re actively working to improve stability and performance soon.
+
+---
+
+## 🧪 How It Works
+
+1. Open any startup website.
+2. The scraper fetches the full HTML and parses useful content.
+3. A scoring algorithm evaluates the site based on:
+   - Keywords
+   - Modern tech usage
+   - Links and metadata
+4. Final data is saved to a CSV or shown in the Streamlit app.
+
+---
+
+## 🚀 Run Locally
+
+### 📦 Requirements
 
 ```bash
-# Clone the repo
-git clone https://github.com/yourusername/lead-scraper.git
-cd lead-scraper
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
-### Requirements (`requirements.txt`)  
+### ▶️ Usage
 
-```
-selenium
-beautifulsoup4
-```
-
-👉 You’ll also need **ChromeDriver** installed and available in PATH.  
-
----
-
-## ▶️ Usage  
-
-### 1. Run for a single website  
+#### Run from CLI
 
 ```bash
 python scrape.py https://example.com
 ```
 
-Output example:  
+#### Run with Streamlit UI
 
-```json
-{
-  "URL": "https://example.com",
-  "Title": "Example Company - AI SaaS Platform",
-  "Score": 6,
-  "Reasons": "AI/B2B/SaaS keyword found, Has pricing or demo link, Modern tech stack used, Email found",
-  "Tags": "B2B",
-  "Emails": "contact@example.com",
-  "Phones": "+1 555 123 4567",
-  "Meta Description": "We provide AI-driven SaaS solutions...",
-  "Headings": ["Welcome to Example", "Our Services"],
-  "Social Links": {"linkedin": "https://linkedin.com/company/example"},
-  "Tech Keywords": ["react", "stripe"],
-  "All Links": [...]
-}
+```bash
+streamlit run app.py
 ```
 
 ---
 
-### 2. Save multiple results to CSV  
+## 📄 Output
 
-Modify your script to run on multiple URLs and save:  
-
-```python
-results = []
-urls = ["https://example.com", "https://another.com"]
-
-for u in urls:
-    results.append(scrape_and_score(u))
-
-save_results_to_csv(results, "scored_leads.csv")
-```
-
-Output: `scored_leads.csv` will contain structured lead data.  
+- Results include:
+  - Title, Meta Description
+  - Emails, Phones
+  - Social Links, Tags
+  - Score and Scoring Reasons
+- Output CSV: `scored_leads.csv`
 
 ---
 
-## 📊 Scoring Logic  
+## 🧠 Ideal For
 
-| Condition                                | Points |
-|------------------------------------------|--------|
-| Contains **AI / B2B / SaaS** keyword     | +3     |
-| Has **pricing/demo** link                | +2     |
-| Uses **modern tech (React/Stripe/etc.)** | +2     |
-| Additional tech stack found              | +1+    |
-| Email found                              | +1     |
-| Phone number found                       | +1     |
-| Mentions **stealth / closed beta**       | −2     |
-
-This produces a **lead quality score** to help prioritize outreach.  
+- Lead generation teams
+- Startup analysts
+- Investors doing due diligence
+- Marketing teams targeting SaaS, B2B, or AI-based tools
 
 ---
 
-## 📂 Project Structure  
+## 👨‍💻 Author
 
-```
-.
-├── scrape.py              # Main scraper & scoring script
-├── requirements.txt       # Dependencies
-├── scored_leads.csv       # (Generated) CSV results
-└── README.md              # Documentation
-```
+- Made with ❤️ by Kawaljeet Singh
+- [LinkedIn](https://www.linkedin.com/in/kawaljeet)
 
 ---
 
-## 🚀 Future Improvements  
+## 🪪 License
 
-- Add **async scraping** for faster batch runs  
-- Integrate with **CRM systems (HubSpot, Salesforce)**  
-- Expand **tech keyword detection**  
-- Detect funding rounds & company size  
-
----
-
-## 📜 License  
-
-MIT License – free to use, modify, and distribute.  
+Licensed under the Apache 2.0 License.
