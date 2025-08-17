@@ -1,72 +1,149 @@
+# 🚀 Lead Scraper & Scoring Tool  
 
-# 🚀 My Portfolio
+This project is a **Python-based lead scraping and scoring tool**. It uses **Selenium + BeautifulSoup** to extract data from websites, then applies a **scoring system** to rank potential leads based on tech stack, keywords, and contact availability.  
 
-This is my personal portfolio website showcasing my projects, skills, and experience. It is built with modern technologies and designed for speed, responsiveness, and simplicity.
-
-[🌐 Live Demo](https://kawaljeet9.vercel.app)  
-[📂 GitHub Repository](https://github.com/Kawaljeet999/Portfolio)
+The tool is designed to help with **lead generation, B2B prospecting, and market research** by automatically collecting and evaluating useful information from websites.  
 
 ---
 
-## ✨ Features
+## 📌 Features  
 
-* 🌙 Dark/Light mode toggle  
-* 🖥️ Responsive design for all devices (desktop, tablet, mobile)  
-* 📁 Projects section with live demos and GitHub links  
-* 📄 Clean and elegant UI using **Tailwind CSS** and **shadcn/ui**  
-* ⚡ Fast performance powered by **Vite**  
-* 🔗 Smooth page transitions with **React Router**
+✅ Scrapes website metadata and content:
+- Page **Title**  
+- **Headings (H1 & H2)**  
+- **Meta description**  
+- **Full text content**  
+
+✅ Extracts contact details:  
+- Emails 📧  
+- Phone numbers 📱  
+
+✅ Detects & tags social media profiles:  
+- LinkedIn, Twitter, Facebook, Instagram  
+
+✅ Finds **tech stack keywords** (React, Stripe, Firebase, Next.js, GraphQL)  
+
+✅ Collects all hyperlinks  
+
+✅ Lead **scoring system** based on:  
+- AI / B2B / SaaS mentions  
+- Pricing/Demo links  
+- Modern tech stack usage  
+- Contact info presence  
+- Early-stage/stealth indicators  
+
+✅ Saves results to **CSV** for easy processing  
 
 ---
 
-## 🛠️ Tech Stack
+## ⚙️ Installation  
 
-- **Frontend**: React + TypeScript  
-- **Styling**: Tailwind CSS + shadcn/ui  
-- **Bundler**: Vite  
-- **Routing**: React Router  
-
----
-
-## 🚀 Getting Started
-
-To run this project locally:
+Make sure you have **Python 3.8+** installed.  
 
 ```bash
-# Step 1: Clone the repository
-git clone https://github.com/Kawaljeet999/Portfolio.git
+# Clone the repo
+git clone https://github.com/yourusername/lead-scraper.git
+cd lead-scraper
 
-# Step 2: Navigate to the project directory
-cd Portfolio
+# Install dependencies
+pip install -r requirements.txt
+```
 
-# Step 3: Install dependencies
-npm install
+### Requirements (`requirements.txt`)  
 
-# Step 4: Start the development server
-npm run dev
+```
+selenium
+beautifulsoup4
+```
+
+👉 You’ll also need **ChromeDriver** installed and available in PATH.  
+
+---
+
+## ▶️ Usage  
+
+### 1. Run for a single website  
+
+```bash
+python scrape.py https://example.com
+```
+
+Output example:  
+
+```json
+{
+  "URL": "https://example.com",
+  "Title": "Example Company - AI SaaS Platform",
+  "Score": 6,
+  "Reasons": "AI/B2B/SaaS keyword found, Has pricing or demo link, Modern tech stack used, Email found",
+  "Tags": "B2B",
+  "Emails": "contact@example.com",
+  "Phones": "+1 555 123 4567",
+  "Meta Description": "We provide AI-driven SaaS solutions...",
+  "Headings": ["Welcome to Example", "Our Services"],
+  "Social Links": {"linkedin": "https://linkedin.com/company/example"},
+  "Tech Keywords": ["react", "stripe"],
+  "All Links": [...]
+}
 ```
 
 ---
 
-## 🌐 Deployment
+### 2. Save multiple results to CSV  
 
-To deploy the project:
+Modify your script to run on multiple URLs and save:  
 
-1. Build the production version:
-   ```bash
-   npm run build
-   ```
-2. Deploy the contents of the `dist` folder to your preferred hosting provider (e.g., Vercel, Netlify).
+```python
+results = []
+urls = ["https://example.com", "https://another.com"]
+
+for u in urls:
+    results.append(scrape_and_score(u))
+
+save_results_to_csv(results, "scored_leads.csv")
+```
+
+Output: `scored_leads.csv` will contain structured lead data.  
 
 ---
 
-## 📄 License
+## 📊 Scoring Logic  
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+| Condition                                | Points |
+|------------------------------------------|--------|
+| Contains **AI / B2B / SaaS** keyword     | +3     |
+| Has **pricing/demo** link                | +2     |
+| Uses **modern tech (React/Stripe/etc.)** | +2     |
+| Additional tech stack found              | +1+    |
+| Email found                              | +1     |
+| Phone number found                       | +1     |
+| Mentions **stealth / closed beta**       | −2     |
+
+This produces a **lead quality score** to help prioritize outreach.  
 
 ---
 
-## 👤 Author
+## 📂 Project Structure  
 
-**Kawaljeet Singh**  
-[GitHub](https://github.com/Kawaljeet999) | [Live Site](https://kawaljeet9.vercel.app)
+```
+.
+├── scrape.py              # Main scraper & scoring script
+├── requirements.txt       # Dependencies
+├── scored_leads.csv       # (Generated) CSV results
+└── README.md              # Documentation
+```
+
+---
+
+## 🚀 Future Improvements  
+
+- Add **async scraping** for faster batch runs  
+- Integrate with **CRM systems (HubSpot, Salesforce)**  
+- Expand **tech keyword detection**  
+- Detect funding rounds & company size  
+
+---
+
+## 📜 License  
+
+MIT License – free to use, modify, and distribute.  
